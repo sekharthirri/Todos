@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    max-width: 100vw !important;
+    background-color: grey;
+  }
+  #timeBox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: rgb(247, 228, 55);
+    font-size: 1.5rem;
+    background-color: black;
+    justify-content: space-between;
+    width: 100vw;
+    padding: 1% 5%;
+    max-width: 100vw;
+  }
+  @media screen and (max-width: 330px) {
+    #timeBox {
+      font-size: 1.2rem;
+      flex-direction: column;
+    }
+    #date {
+      margin-bottom: 0.5rem;
+    }
+  }
+  #inputBox {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 5%;
+    justify-content: center;
+    align-items: center;
+  }
+  #newTask {
+    width: 30vw;
+    height: 50px;
+    border-radius: 5px !important;
+    border: 2px solid black;
+    padding-left: 20px !important;
+  }
+  @media screen and (max-width: 900px) {
+    #newTask {
+      width: 60vw;
+      height: 50px;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    #newTask {
+      width: 80vw;
+      height: 10vh;
+    }
+  }
+  #newTask:focus {
+    padding-left: 20px;
+  }
+  #submitTask {
+    background-color: rgb(58, 140, 246);
+    text-align: center !important;
+    color: white;
+    font-weight: bolder;
+    font-size: larger;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 1.5rem;
+    width: 100px;
+    border: none;
+    padding: 5px;
+  }
+  #submitTask:hover {
+    box-shadow: 0px 2px 3px 1px black;
+  }
+  #items {
+    margin-top: 2%;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+  @media screen and (max-width: 500px) {
+    #items {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  .taskItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 2px solid rgb(3, 56, 3);
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding-left: 1rem;
+    font-size: 2rem;
+    background-color: rgb(148, 246, 148);
+  }
+  @keyframes increaseItem {
+    0% {
+      width: 10vw;
+      background-color: rgb(254, 254, 254);
+    }
+    25% {
+      width: 10vw;
+      background-color: rgb(179, 248, 147);
+    }
+    50% {
+      width: 30vw;
+      background-color: rgb(185, 249, 185);
+    }
+    100% {
+      width: 40vw;
+      background-color: rgb(148, 246, 148);
+    }
+  }
+  .taskItem li {
+    width: 40vw;
+    height: 50px;
+  }
+  .deleteTask {
+    margin-top: 0.5rem;
+    margin-right: calc(90vw - 89vw);
+    background-color: rgb(241, 28, 25);
+    border: 0px;
+    width: 70px;
+    height: 30px;
+    color: rgb(247, 243, 243);
+    font-weight: bolder;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  @media screen and (max-width: 600px) {
+    .taskItem {
+      width: 90vw;
+      height: 50px;
+    }
+  }
+  @media screen and (min-width: 600px) {
+    .taskItem li {
+      animation: increaseItem 0.5s 1;
+    }
+  }
+  .taskItemDelete{
+    animation: invisible 0.5s 1;
+  }
+  
+  @keyframes invisible {
+    0%{
+        opacity: 1;
+    }
+    20%{
+        opacity: 0.8;
+    }
+    40%{
+        opacity: 0.6;
+    }
+    60%{
+        opacity: 0.4;
+    }
+    80%{
+        opacity: 0.2;
+    }
+    100%{
+        opacity: 0;
+    }
+  }

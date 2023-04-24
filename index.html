@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Tasks</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        setInterval(updateTime, 1000);
+        function updateTime() {
+            const date = new Date();
+            document.getElementById("time").innerHTML = date.toLocaleTimeString();
+        }
+    </script>
+</head>
+<body>
+    <div id="root">
+        <div id="timeBox"></div>
+        <div id="inputBox">
+            <input type="text" id="newTask" value="" placeholder="Write the task">
+            <button id="submitTask" onclick="addTask()">Add</button>
+        </div>
+        <div id="displayBox">
+            <ul id="items"></ul>
+        </div>
+    </div>
+    <script src="./app.js" type="text/javascript"></script>
+</body>
+</html>
